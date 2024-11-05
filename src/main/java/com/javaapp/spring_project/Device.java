@@ -4,11 +4,12 @@
     private String name;
     private int powerConsumption; 
     private boolean isOn;
-
-    public Device(String name, int powerConsumption) {
+    private int id ;
+    public Device(String name, int powerConsumption, int id ){
         this.name = name;
         this.powerConsumption = powerConsumption;
         this.isOn = false; 
+        this.id = id;
     }
     public void turnOn() {
         isOn = true;
@@ -31,6 +32,9 @@
 
     public boolean isOn() {
         return isOn;
+    }
+    public int getid(){
+        return id;
     }
 }
 
