@@ -53,7 +53,10 @@ public class EnergyManager {
         
         return total;
     }
-    
+          public List<Device> getDevices() {
+           return devices; 
+}
+
 
     public void displayStatus() {
       

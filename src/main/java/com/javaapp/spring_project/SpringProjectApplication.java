@@ -1,18 +1,21 @@
 package com.javaapp.spring_project;
 
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringProjectApplication {
-
-          public static void main(String[] args) {
-		
+       public static void main(String[] args) {
+		    SpringApplication.run(SpringProjectApplication.class, args);
             EnergyManager energyManager = new EnergyManager(400); // Set max allowed power
+            Controller controller = new Controller(energyManager);
 
             // Creating devices
-            Device fridge = new Device("Fridge", 100);
-            Device ac = new Device("Air Conditioner", 300);
-            Device light = new Device("Light", 200);
+            Device fridge = new Device("Fridge", 100,21);
+            Device ac = new Device("Air Conditioner", 300,22);
+            Device light = new Device("Light", 200,23);
 
             // Add devices to the manager
             energyManager.addDevice(fridge);
@@ -35,8 +38,13 @@ public class SpringProjectApplication {
             // Display status after optimization
             System.out.println("Status after optimization:");
             energyManager.displayStatus();
+            List<Device> devices = energyManager.getDevices();
+        for (Device device : devices) {
+            System.out.println(device.getName() + " is " + (device.isOn() ? "ON" : "OFF"));
 
         } 
+
+       }
 }
     
 
