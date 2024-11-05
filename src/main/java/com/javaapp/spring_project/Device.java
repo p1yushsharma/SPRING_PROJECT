@@ -4,7 +4,7 @@
     private String name;
     private int powerConsumption; 
     private boolean isOn;
-
+    int b;
     public Device(String name, int powerConsumption) {
         this.name = name;
         this.powerConsumption = powerConsumption;
