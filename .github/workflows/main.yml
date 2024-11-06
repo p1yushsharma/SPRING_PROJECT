@@ -22,12 +22,12 @@ jobs:
           
 
       - name: Unit Test
-        run: mvn -B test --file pom.xml
+        run: mvn -B test --file pom.xml-x
 
       - name: Build the Application
         run: |
           mvn clean
-          mvn -B package --file pom.xml
+          mvn -B package --file pom.xml-x
 
       - name: Echo Message
         run: echo "This is my first pipeline."
