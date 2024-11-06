@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
+          
 
       - name: Unit Test
         run: mvn -B test --file pom.xml
