@@ -1,7 +1,5 @@
 package com.javaapp.spring_project;
 
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +8,7 @@ public class SpringProjectApplication {
        public static void main(String[] args) {
 		    SpringApplication.run(SpringProjectApplication.class, args);
             EnergyManager energyManager = new EnergyManager(400); // Set max allowed power
+                    @SuppressWarnings("unused")
             Controller controller = new Controller(energyManager);
 
             // Creating devices
@@ -38,7 +37,7 @@ public class SpringProjectApplication {
             // Display status after optimization
             System.out.println("Status after optimization:");
             energyManager.displayStatus();
-            List<Device> devices = energyManager.getDevices();
+            var devices = energyManager.getDevices();
         for (Device device : devices) {
             System.out.println(device.getName() + " is " + (device.isOn() ? "ON" : "OFF"));
 

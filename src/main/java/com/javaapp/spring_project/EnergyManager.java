@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnergyManager {
+    @SuppressWarnings("FieldMayBeFinal")
     private List<Device> devices;
+    @SuppressWarnings("FieldMayBeFinal")
     private int maxAllowedPower; // Maximum allowed power in watts
 
     public EnergyManager(int maxAllowedPower) {
