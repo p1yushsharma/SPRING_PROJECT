@@ -1,4 +1,5 @@
-name: build and deploy spring_project
+name: Build and Deploy Spring Project
+
 on:
   push:
     branches:
@@ -8,18 +9,26 @@ jobs:
   build-deploy:
     name: Build and Deploy Spring Project
     runs-on: ubuntu-latest
+
     steps:
+      
       - name: Checkout Code
         uses: actions/checkout@v2
+
+     
       - name: Setup JDK 17
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
           java-version: 17
-      - run: echo "This is my first pipeline."
-      # name: Unit Test
-        #run: mvn -B test --file pom.xml//
 
-     # - name: Build the Application
-      #  run: |
-       #   mvn clean
-        #  mvn -B package --file pom.xml
+     
+      - name: Build the Application
+        run: mvn -B package --file pom.xml
+
+     
+      - name: Unit Test
+        run: mvn -B test --file pom.xml
+
+    
+      - name: Echo Message
+        run: echo "This is my first pipeline."
