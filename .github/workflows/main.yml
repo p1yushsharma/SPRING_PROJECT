@@ -21,8 +21,8 @@ jobs:
           distribution: 'temurin'
           
 
-     # - name: Unit Test
-       # run: mvn -B test --file pom.xml
+      - name: Unit Test
+        run: mvn -B test --pom.xml
 
       - name: Build the Application
         run: |
