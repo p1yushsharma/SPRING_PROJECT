@@ -21,14 +21,14 @@ jobs:
           java-version: 17
           distribution: 'temurin'
           
-
-      - name: Unit Test
-        run: mvn -B test -- file pom.xml
-
       - name: Build the Application
-        run: |
-          mvn clean
-          mvn -B package -f SPRING_PROJECT/pom.xml-x
+            run: |
+              mvn clean
+               mvn -B package -f SPRING_PROJECT/pom.xml-x
+      - name: Unit Test
+        run: mvn -B test -f SPRING_PROJECT/pom.xml-x
+
+      
 
       - name: Echo Message
         run: echo "This is my first pipeline."
