@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Build the Application
-            run: |
+        run: 
               mvn clean
                mvn -B package -f SPRING_PROJECT/pom.xml-x
       - name: Unit Test
